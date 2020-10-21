@@ -13,7 +13,7 @@ class Pub:
         return customer.age >= 18 
     
     def drink_transaction(self, customer, drinks):
-        if self.check_age(customer) is True:
+        if self.check_age(customer) and self.sober_enough(customer) is True:
             customer.buy_drink(drinks)
             self.increase_till(drinks)
 

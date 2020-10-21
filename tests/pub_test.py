@@ -37,6 +37,13 @@ class TestPub(unittest.TestCase):
         self.pub.drink_transaction(customer, drinks)
         self.assertEqual(17.00, customer.wallet)
         self.assertEqual(103.00, self.pub.till)
+    
+    def test_drink_transaction_False(self):
+        customer = Customer("Bob", 20.00, 40, 11)
+        drinks = Drinks("Wine", 3.00, 1)
+        self.pub.drink_transaction(customer, drinks)
+        self.assertEqual(20.00, customer.wallet)
+        self.assertEqual(100.00, self.pub.till)
 
     def test_sober_enough__False(self):
         customer = Customer("Bob", 20.00, 40, 11)
