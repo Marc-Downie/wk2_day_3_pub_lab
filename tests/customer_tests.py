@@ -2,6 +2,7 @@ import unittest
 from src.customer import Customer
 from src.drinks import Drinks
 from src.pub import Pub
+from src.food import Food
 
 class TestCustomer(unittest.TestCase):
     
@@ -20,3 +21,9 @@ class TestCustomer(unittest.TestCase):
         drink = Drinks("Wine", 3.00, 1)
         self.customer.add_drink_units(drink)
         self.assertEqual(1, self.customer.drunkeness)
+    
+    def test_rejuvenation_level__True(self):
+        customer = Customer("Bob", 20.00, 40, 11)
+        food = Food("Kebab", 4, 3)
+        customer.rejuvenation_level(food)
+        self.assertEqual(8, customer.drunkeness)

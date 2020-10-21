@@ -1,5 +1,6 @@
 import unittest
 from src.drinks import Drinks
+from src.food import Food
 
 class TestDrinks(unittest.TestCase):
 
